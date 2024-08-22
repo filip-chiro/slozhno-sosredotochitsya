@@ -1,5 +1,137 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  position: relative;
+  background-color: var(--background-color);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px; /* clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); для медиа c мелкого на средний, потом фикс*/
+  min-height: 668px;
+  background-image: var(--background-header);
+  background-size: cover;
+  background-position: center;
+}
+
+.decorated-zone::before {
+  content: "";
+  border-right: 1px solid var(--accent-decoration-color);
+  border-top: 1px solid var(--accent-decoration-color);
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  inset-block-start: 10px; /*clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); для медиа*/
+  inset-inline-end: 10px; /* clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); */
+}
+
+.decorated-zone::after {
+  content: "";
+  border-bottom: 1px solid var(--accent-decoration-color);
+  border-left: 1px solid var(--accent-decoration-color);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  inset-block-end: 10px; /* clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); */
+  inset-inline-start: 10px; /* clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); */
+}
+
+.header__rec {
+  position: absolute;
+  right: 19px; /* clamp(1.1875rem, 0.5911rem + 2.5445vw, 1.8125rem);  для медиа*/
+}
+
+.header__rec::before {
+  content: "rec";
+  font-family: IBM Plex Mono, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 139%;
+  text-align: center;
+  color: var(--accent-decoration-color);
+  text-transform: uppercase;
+}
+
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  margin-inline-start: 10px;
+  background-color: var(--accent-decoration-color);
+  box-shadow: 0 0 4px 2px var(--accent-decoration-color);
+}
+
+.header__theme-menu {
+  display: grid;
+  align-content: center;
+  justify-content: end;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  font-family: IBM Plex Mono, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  color: var(--accent-decoration-color);
+  background-color: transparent;
+  padding: 0px 13px;
+  inline-size: 70px;
+  block-size: 26px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-color);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-decoration-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-decoration-color);
+  pointer-events: none;
+}
+
+.header__title {
+  font-family: IBM Plex Mono, sans-serif;
+  font-weight: 700;
+  font-size: 116px; /*clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); НЕЛИНЕЙНЫЙ от мелкого к среднему потом ЗАМЕНА*/
+  line-height: 83%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--logo-color);
+}
+
+.title {
+  font-family: IBM Plex Mono, sans-serif;
+  margin: 55px 0; /*font-size: clamp(3.4375rem, -2.9437rem + 27.2265vw, 10.125rem); потом замена на 114!*/
+}
+
+.title__decor {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--accent-text-color);
+  background-color: var(--accent-color);
+}
+
+
