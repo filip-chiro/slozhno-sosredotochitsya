@@ -7,7 +7,7 @@
   background-size: cover;
   background-attachment: fixed;
   display: grid;
-  gap: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem); /* смена на fix na 1024 медийкой */
+  gap: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
 }
 
 .header {
@@ -16,8 +16,21 @@
   grid-template-rows: 1fr min-content 1fr;
   width: 100vw;
   height: 100vh;
-  padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /*  для медиа c мелкого на средний, потом фикс*/
-  min-height: 668px;}
+  padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  min-height: 668px;
+}
+
+@media (width > 767px) {
+  .header {
+    min-height: 1024px;
+  }
+}
+
+@media (width > 1023px) {
+  .header {
+    min-height: 768px;
+  }
+}
 
 .decorated-zone::before {
   content: "";
@@ -26,8 +39,8 @@
   width: 25px;
   height: 24px;
   position: absolute;
-  inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* для медиа*/
-  inset-inline-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);; /* фиксируем на 1024  */
+  inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  inset-inline-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
 .decorated-zone::after {
@@ -37,15 +50,15 @@
   width: 25px;
   height: 25px;
   position: absolute;
-  inset-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* исправить медийк  */
-  inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* меняем медийкой на фикс при 1024 */
+  inset-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
 .header__rec {
   position: absolute;
   display: block;
-  margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* media fix 1024*/
-  right: clamp(1.1875rem, 0.5911rem + 2.5445vw, 1.8125rem); /*потом по медиа фикс?*/
+  margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  right: clamp(1.1875rem, 0.5911rem + 2.5445vw, 1.8125rem);
 }
 
 .header__rec::before {
@@ -76,10 +89,23 @@
   justify-content: end;
 }
 
+@media (width > 1023px) {
+  .header__theme-menu {
+    align-content: space-between;
+    justify-content: center;
+  }
+}
+
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media (width > 1023px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
 }
 
 .header__theme-menu-button {
@@ -117,16 +143,31 @@
 .header__title {
   font-family: IBM Plex Mono, sans-serif;
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* НЕЛИНЕЙНЫЙ от мелкого к среднему потом ЗАМЕНА*/
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--logo-color);
 }
 
+@media (width > 767px) {
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: -20px;
+  }
+}
+
 .header__title-container {
   justify-self: end;
-  inline-size: clamp(22.1875rem, 21.6508rem + 2.2901vw, 22.75rem); /* change to other to 1024*/
-  padding-block-start: clamp(3.4375rem, -2.9437rem + 27.2265vw, 10.125rem); /* потом замена на 114px, надо подумать надо ли*/
+  inline-size: clamp(22.1875rem, 21.6508rem + 2.2901vw, 22.75rem); 
+  padding-block-start: clamp(3.4375rem, -2.9437rem + 27.2265vw, 10.125rem);
+}
+
+@media (width > 767px) {
+  .header__title-container {
+    justify-self: end;
+    inline-size: clamp(22.75rem, -1.0625rem + 49.6094vw, 30.6875rem);
+    padding-block-start: clamp(114px, calc(162px - (48 * ((100vw - 768px) / 256))), 162px);
+  }
 }
 
 .header__title-text {
@@ -143,7 +184,7 @@
 .content {
   display: grid;
   gap: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
-  padding: 0 clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /*  для медиа c мелкого на средний, потом фикс*/
+  padding: 0 clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   margin-block-start: 0px;
 }
 
@@ -237,11 +278,43 @@
   gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
+@media (width > 767px) {
+  .images-list {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+  }
+
+  .image:nth-child(1) {
+    grid-area: sunset;
+  }
+  
+  .image:nth-child(2) {
+    grid-area: ice-cream;
+  }
+  
+  .image:nth-child(3) {
+    grid-area: tape;
+  }
+  
+  .image:nth-child(4) {
+    grid-area: books;
+  }
+  
+  .image:nth-child(5) {
+    grid-area: street;
+  }
+}
+
 .image {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  max-height: 100%;
+  height: 100%;
+  display: block;
 }
 
 .footer {
@@ -256,13 +329,31 @@
   margin-block-end: calc(-1 * clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem));
 }
 
+@media (width > 767px) {
+  .footer {
+    min-height: 1024px;
+  }
+}
+
+@media (width > 1023px) {
+  .footer {
+    min-height: 768px;
+  }
+}
+
 .footer__title {
   font-family: IBM Plex Mono, sans-serif;
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); 
   line-height: 83%;
   color: var(--logo-color);
   text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width > 767px) {
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
 
 .decorated-zone::before {
@@ -272,8 +363,8 @@
   width: 25px;
   height: 24px;
   position: absolute;
-  inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* для медиа*/
-  inset-inline-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* fix 1024 */
+  inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  inset-inline-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
 .decorated-zone::after {
@@ -283,7 +374,7 @@
   width: 25px;
   height: 25px;
   position: absolute;
-  inset-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* исправить хз  */
-  inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* испр  */
+  inset-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
