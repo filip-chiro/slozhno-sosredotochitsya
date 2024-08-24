@@ -157,7 +157,7 @@
 
 .header__title-container {
   justify-self: end;
-  inline-size: clamp(22.1875rem, 21.6508rem + 2.2901vw, 22.75rem); 
+  inline-size: clamp(22.1875rem, 21.6508rem + 2.2901vw, 22.75rem);
   padding-block-start: clamp(3.4375rem, -2.9437rem + 27.2265vw, 10.125rem);
 }
 
@@ -382,7 +382,7 @@
 .footer__title {
   font-family: IBM Plex Mono, sans-serif;
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); 
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--logo-color);
   text-shadow: 2px 2px 0 var(--accent-color);
@@ -392,26 +392,4 @@
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-}
-
-.decorated-zone::before {
-  content: "";
-  border-right: 1px solid var(--accent-decoration-color);
-  border-top: 1px solid var(--accent-decoration-color);
-  width: 25px;
-  height: 24px;
-  position: absolute;
-  inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  inset-inline-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-}
-
-.decorated-zone::after {
-  content: "";
-  border-bottom: 1px solid var(--accent-decoration-color);
-  border-left: 1px solid var(--accent-decoration-color);
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  inset-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }

@@ -4,7 +4,7 @@
   переключая тему
 */
 .page.theme_light {
-  --accent-color: #ff8dcb;  
+  --accent-color: #ff8dcb;
   --accent-text-color: #353430;
   --accent-decoration-color: #353430;
   --section-title-color: #353430;
@@ -21,7 +21,7 @@
 
 @media (prefers-color-scheme: light) {
    .page {
-    --accent-color: #ff8dcb;  
+    --accent-color: #ff8dcb;
     --accent-text-color: #353430;
     --accent-decoration-color: #353430;
     --section-title-color: #353430;
@@ -30,7 +30,7 @@
     --background-theme: url(../images/cover-image-light.png);
     --hover-color: rgba(50, 49, 45, 0.4);
     --background-color: #fff1f7;
-    }
+    }  
 
   .header__rec {
     display: none;
