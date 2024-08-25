@@ -13,7 +13,7 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   min-height: 668px;
@@ -348,11 +348,11 @@
   align-content: center;
   justify-items: center;
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   min-height: 668px;
-  /* margin-block-end: calc(-1 * clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem));*/
+  margin-block-end: calc(-1 * clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem));
 }
 
 @media (width > 767px) {
